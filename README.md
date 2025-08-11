@@ -21,6 +21,14 @@ cd <project-name>
 python ../fastapi_service_generator.py add-service <service1>
 python ../fastapi_service_generator.py add-service <service2> --port 8005
 
+4. Create without frontend
+python create_fastapi_project.py api_only --no-frontend
+
+5. Start development
+cd <project-name>
+cp .env.example .env
+make up
+
 🎯 What This Creates:
 When you run python create_fastapi_project.py links_from_liliput, it automatically:
 ✅ Creates the complete directory structure
