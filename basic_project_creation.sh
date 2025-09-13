@@ -51,6 +51,7 @@ git commit -m "Repo Initialized"
 DESCRIPTION='repo-name'
 
 # cd repo-folder
+VISIBILITY='--public'
 
 # create repo
 gh repo create "$REPO_NAME" $VISIBILITY --source=. --remote=origin --push --description "$DESCRIPTION"
