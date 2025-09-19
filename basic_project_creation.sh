@@ -1,7 +1,14 @@
 ## create local folder with repo name
 REPO_NAME='repo-name'
 
-# git init
+# Description
+DESCRIPTION=REPO_NAME
+
+# cd repo-folder
+VISIBILITY='--public'
+
+# create Readme.md
+echo "# $REPO_NAME" > README.md
 
 # create .gitignore
 cat > .gitignore <<'EOF'
@@ -38,20 +45,10 @@ docker-compose.override.yml
 Thumbs.db
 EOF
 
-
-# create Readme.md
-echo "# $REPO_NAME" > README.md
-
-# Stage and commit
+# Initialize, Stage and commit
+git init
 git add .
 git commit -m "Repo Initialized"
-
-
-# Description
-DESCRIPTION='repo-name'
-
-# cd repo-folder
-VISIBILITY='--public'
 
 # create repo
 gh repo create "$REPO_NAME" $VISIBILITY --source=. --remote=origin --push --description "$DESCRIPTION"
